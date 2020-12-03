@@ -1,6 +1,31 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# <b> 2가지 방식으로 구현한 팩토리얼 예제
+
+# In[1]:
+
+
+# 반복적으로 구현한 n!
+def factorial_iterative(n):
+    result = 1
+    # 1부터 n까지의 수를 차례대로 곱하기
+    for i in range(1, n+1):
+        result *= i
+    return result
+
+# 재귀적으로 구현한 n!
+def factorial_recursive(n):
+    if n <= 1: # n이 1 이하인 경우 1을 반환
+        return 1
+    # n! = n * (n - 1)!를 그대로 코드로 작성하기
+    return n * factorial_recursive(n - 1)
+
+# 각각의 방식으로 구현한 n! 출력(n = 5)
+print('반복적으로 구현: ', factorial_iterative(5))
+print('재귀적으로 구현: ', factorial_recursive(5))
+
+
 # <b>큐 예제
 
 # In[3]:
@@ -27,9 +52,30 @@ print(queue) # 나중에 들어온 원소부터 출력
 print(list(queue)) # queue의 list 형태
 
 
+# <b> 인접 리스트 방식 예제
+
+# In[2]:
+
+
+# 행(row)이 3개인 2차원 리스트로 인접 리스트 표현
+graph = [[] for _ in range(3)]
+
+# 노드 0에 연결된 노드 정보 저장(노드, 거리)
+graph[0].append((1, 7))
+graph[0].append((2, 5))
+
+# 노드 1에 연결된 노드 정보 저장(노드, 거리)
+graph[1].append((0, 7))
+
+# 노드 2에 연결된 노드 정보 저장(노드, 거리)
+graph[2].append((0, 5))
+
+print(graph)
+
+
 # <b>DFS 예제
 
-# In[14]:
+# In[3]:
 
 
 # DFS 메서드 정의
