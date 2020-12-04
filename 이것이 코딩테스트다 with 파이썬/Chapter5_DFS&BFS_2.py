@@ -3,6 +3,8 @@
 
 # <b>음료수 얼려 먹기
 
+# ans)
+
 # In[ ]:
 
 
@@ -41,7 +43,9 @@ print(result)
 
 # <b>미로 탈출
 
-# In[ ]:
+# ans)
+
+# In[1]:
 
 
 from collections import deque
