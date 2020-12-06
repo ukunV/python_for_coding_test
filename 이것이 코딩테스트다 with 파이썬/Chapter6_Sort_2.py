@@ -15,6 +15,8 @@ nums.sort()
 print(nums[::-1])
 
 
+# ans)
+
 # In[3]:
 
 
@@ -32,20 +34,22 @@ for i in array:
 
 # <b>성적이 낮은 순서로 학생 출력하기
 
+# ans)
+
 # In[11]:
 
 
 n = int(input())
 
-students = []
+array = []
 for i in range(n):
-    data = input().split()
-    students.append([data[0], int(data[1])])
+    input_data = input().split()
+    array.append([input_data[0], int(input_data[1])])
 
-students = sorted(students, key = lambda a : a[1])
+array = sorted(arrat, key = lambda student : student[1])
 
-for i, j in students:
-    print(i, end = ' ')
+for student in array:
+    print(student[0], end = ' ')
 
 
 # <b>두 배열의 원소 교체
