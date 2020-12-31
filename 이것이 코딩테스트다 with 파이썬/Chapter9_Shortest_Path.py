@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <b> 간단한 다익스트라 알고리즘 소스코드 - O(V^2)_V: 노드의 개수
+# <b> 간단한 다익스트라 알고리즘 소스코드 - O(V^2) (V: 노드의 개수)
 
-# In[8]:
+# In[2]:
 
 
-import sys
-input = sys.stdin.readline
+
 INF = int(1e9) # 무한을 의미하는 값으로 10억을 설정
 
 # 노드의 개수, 간선의 개수를 입력받기
@@ -27,10 +26,12 @@ for _ in range(m):
     # a번 노드에서 b번 노드로 가는 비용이 c라는 의미
     graph[a].append((b, c))
     
+print(graph)
+
 # 방문하지 않은 노드 중에서 가장 최단 거리가 짧은 노드의 번호를 반환
 def get_smallest_node():
     min_value = INF
-    index = 0 # 가장 최단 거리가 짧은 노드(인덱스)\
+    index = 0 # 가장 최단 거리가 짧은 노드(인덱스)
     for i in range(1, n + 1):
         if distance[i] < min_value and not visited[i]:
             min_value = distance[i]
