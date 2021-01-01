@@ -3,8 +3,7 @@
 
 # <b> 간단한 다익스트라 알고리즘 소스코드 - O(V^2) (V: 노드의 개수)
 
-# In[2]:
-
+# In[8]:
 
 
 INF = int(1e9) # 무한을 의미하는 값으로 10억을 설정
@@ -25,8 +24,6 @@ for _ in range(m):
     a, b, c = map(int, input().split())
     # a번 노드에서 b번 노드로 가는 비용이 c라는 의미
     graph[a].append((b, c))
-    
-print(graph)
 
 # 방문하지 않은 노드 중에서 가장 최단 거리가 짧은 노드의 번호를 반환
 def get_smallest_node():
@@ -71,12 +68,24 @@ for i in range(1, n + 1):
 
 # <b> 개선된 다익스트라 알고리즘 소스코드 - O(ElogV)
 
-# In[ ]:
+# * 다익스트라 최단 경로 알고리즘에서는 비용이 적은 노드를 우선하여 방문하므로
+#   최소 힙 구조를 기반으로 하는 파이썬의 우선순위 큐 라이브러리를 그대로 사용하면 적합하다.
+
+# * 또한 최소 힙을 최대 힙처럼 사용하기 위해서 일부로 우선순위에 해당하는 값에 음수 부호를 붙여서 넣었다가,
+#   나중에 우선순위 큐에서 꺼낸 다음에 다시 음수 부호를 붙여서 원래의 값으로 돌리는 방식을 사용할 수 있다.
+
+# * 리스트
+#  - 삽입 시간: O(1)
+#  - 삭제 시간: O(N)
+#     
+# * 힙(Heap)
+#  - 삽입 시간: O(logN)
+#  - 삭제 시간: O(logN)
+
+# In[7]:
 
 
 import heapq
-import sys
-input = sys.stdin.readline
 INF = int(1e9) # 무한을 의미하는 값으로 10억을 설정
 
 # 노드의 개수, 간선의 개수를 입력받기
@@ -128,7 +137,9 @@ for i in range(1, n + 1):
 
 # <b> 플로이드 워셜 알고리즘 소스코드 - O(N^3)
 
-# In[ ]:
+# * D_ab = min(D_ab, D_ak + D_kb)
+
+# In[10]:
 
 
 INF = int(1e9) # 무한을 의미하는 값으로 10억을 설정
@@ -167,93 +178,4 @@ for a in range(1, n + 1):
         else:
             print(graph[a][b], end=" ")
     print()
-
-
-# <b> 미래 도시
-
-# ans)
-
-# In[3]:
-
-
-INF = int(1e9) # 무한을 의미하는 값으로 10억을 설정
-
-# 노드의 개수 및 간선의 개수를 입력받기
-n, m = map(int, input().split())
-# 2차원 리스트(그래프 표현)를 만들고, 모든 값을 무한으로 초기화
-graph = [[INF] * (n + 1) for _ in range(n + 1)]
-
-# 자기 자신에서 자기 자신으로 가는 비용은 0으로 초기화
-for a in range(1, n + 1):
-    for b in range(1, n + 1):
-        if a == b:
-            graph[a][b] = 0
-            
-# 각 간선에 대한 정보를 입력받아, 그 값으로 초기화
-for _ in range(m):
-    # A와 B가 서로에게 가는 비용은 1이라고 설정
-    a, b = map(int, input().split())
-    graph[a][b] = 1
-    graph[b][a] = 1
-    
-# 거쳐 갈 노드의 X와 최종 목적지 노드 K를 입력받기
-x, k = map(int, input().split())
-
-# 점화식에 따라 플로이드 워셜 알고리즘을 수행
-for k in range(1, n + 1):
-    for a in range(1, n + 1):
-        for b in range(1, n + 1):
-            graph[a][b] = min(graph[a][b], graph[a][k] + graph[k][b])
-            
-# 수행된 결과를 출력
-distance = graph[1][k] + graph[k][x]
-
-# 도달할 수 없는 경우, -1을 출력
-if distance >= INF:
-    print(-1)
-# 도달할 수 있다면,최단 거리를 출력
-else:
-    print(distance)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
