@@ -151,116 +151,134 @@ food_times = [8, 6, 4]
 print(solution(food_times, 15), '번')
 
 
-# In[ ]:
+# <b> 7. 럭키 스트레이트
 
-
-
-
-
-# In[ ]:
-
-
-
-
+# 항상 짝수인 수가 주어진다.
+# 이 수에서 중앙값을 기준으로 왼쪽의 자릿 수 합이 오른쪽 자릿 수 합과 같으면
+# LUCKY, 틀리면 READY를 print해라
 
 # In[ ]:
 
 
+n = input()
+length = len(n) # 점수값의 총 자릿수
+summary = 0
+
+# 왼쪽 부분의 자릿수 합 더하기
+for i in range(length // 2):
+    summary += int(n[i])
+    
+# 오른쪽 부분의 자릿수 합 빼기
+for i in range(length // 2, length):
+    summary -= int(n[i])
+    
+# 왼쪽 부분과 오른쪽 부분의 자릿수 합이 동일한지 검사
+if summary == 0:
+    print('LUCKY')
+else:
+    print('READY')
 
 
+# <b> 8. 문자열 재정렬
 
-# In[ ]:
+# 알파벳 대문자와 숫자 (0~9)로만 구성된 문자열이 입력으로 주어집니다. 이때 모든 알파벳을 오름차순으로 정렬하여 이어서 출력한 뒤에, 그 뒤에 모든 숫자를 더한 값을 이어서 출력합니다.
+# 예를 들어 K1KA5CB7이 입력으로 들어오면, ABCKK13을 출력합니다.
 
-
-
-
-
-# In[ ]:
+# In[5]:
 
 
+array = input()
+
+alp = []
+sum = 0
+
+for i in array:
+    if i.isdecimal():
+        sum += int(i)
+    else:
+        alp.append(i)
+    
+alp.sort()
+
+if sum == 0:
+    print(''.join(alp))
+else:
+    print(''.join(alp) + str(sum))
 
 
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
+# ans)
 
 # In[ ]:
 
 
+data = input()
+result = []
+value = 0
+
+# 문자를 하나씩 확인하며
+for x in data:
+    # 알파벳인 경우 결과 리스트에 삽입
+    if x.isalpha():
+        result.append(x)
+    # 숫자는 따로 더하기
+    else:
+        value += int(x)
+
+# 알파벳을 오름차순으로 정렬
+result.sort()
+
+# 숫자가 하나라도 존재하는 경우 가장 뒤에 삽입
+if value != 0:
+    result.append(str(value))
+
+# 최종 결과 출력(리스트를 문자열로 변환하여 출력)
+print(''.join(result))
 
 
+# <b> 9. 문자열 압축
 
-# In[ ]:
+# 데이터 처리 전문가가 되고 싶은 "어피치"는 문자열을 압축하는 방법에 대해 공부를 하고 있습니다.
+# 최근에 대량의 데이터 처리를 위한 간단한 비손실 압축 방법에 대해 공부를 하고 있는데, 문자열에 서 같은 값이 연속해서 나타나는 것을 그 문자의 개수와 반복되는 값으로 표현하여 더 짧은 문자열로 줄여서 표현하는 알고리즘을 공부하고 있습니다.
+# 
+# 간단한 예로 "aabbaccc"의 경우 2a2ba3c(문자가 반복되지 않아 한 번만 나타난 경우 1은 생략함)와 같이 표현할 수 있는데 이러한 방식은 반복되는 문자가 적은 경우 압축률이 낮다는 단점이 있습니다.
+# 예를 들면, "abcabcdede"와 같은 문자열은 전혀 압축되지 않습니다. 어피치는 이러한 단점을 해결하기 위해 문자열을 1개 이상의 단위로 잘라서 압축하여 더 짧은 문자열로 표현할 수 있는지 방법을 찾아보려고 합니다.
+# 
+# 예를 들어, "ababcdcdababcdcb"의 경우 문자를 1개 단위로 자르면 전혀 압축되지 않지만, 2개 단위로 잘라서 압축하다면 "2ababcdcd"로 표현할 수 있으며, 이때가 가장 짧게 압축하여 표현하는 방법이빈다.
+# 
+# 다른 예로, "abcabcdede"와 같은 경우, 문자를 2개 단뤼로 잘라서 압축하면 "abcabc2de"가 되지만 3개 단뤼로 자른다면 "2abcdede"가 되어 3개 단위가 가장 짧은 압축 방법이 됩니다. 이때 3개 단위로 자르고 마지막에 남는 문자열은 그대로 붙여주면 됩니다.
+# 
+# 압축할 문자열 s,가 매개변수로 주어질 때, 위에 설명한 방법으로 1개 이상 단위로 문자열을 잘라 압축하여 표현한 문자열 중 가장 짧은 것의 길이를 return하도록 solution함수를 완성해주세요.
 
+# ans)
 
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
+# In[9]:
 
 
+def solution(s):
+    answer = len(s)
+    
+    # 1개 단위(step)부터 압축 단위를 늘려가며 확인
+    for step in range(1, len(s) // 2 + 1):
+        compressed = ""
+        prev = s[0:step] # 앞에서부터 step만큼의 문자열 추출
+        count = 1
+        # 단위(step) 크기만큼 증가시키며 이전 문자열과 비교
+        for j in range(step, len(s), step):
+            # 이전 상태와 동일하다면 압축 횟수(count) 증가
+            if prev == s[j:j + step]:
+                count += 1
+            # 다른 문자열이 나왔다면(더 이상 압축하지 못하는 경우라면)
+            else:
+                compressed += str(count) + prev if count >= 2 else prev
+                prev = s[j:j + step] # 다시 상태 초기화
+                count = 1
+                
+        # 남아있는 문자열에 대해서 처리
+        compressed += str(count) + prev if count >= 2 else prev
+        # 만들어지는 압축 문자열이 가장 짧은 것이 정답
+        answer = min(answer, len(compressed))
+        
+    return compressed + ' ' + str(answer)
 
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
+print(solution('ababcdcdababcdcd'))
 
