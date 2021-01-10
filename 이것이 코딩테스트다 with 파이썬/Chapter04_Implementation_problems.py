@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <b> 상하좌우
+# <b> 1. 상하좌우
 
-# In[9]:
+# In[1]:
 
 
 n = int(input())
@@ -12,7 +12,7 @@ x, y = 1, 1
 type = ['L', 'R', 'U', 'D']
 
 for r in routes:
-    if (x == 1 and r == 'U') or (y == 1 and r == 'L') or (y == 5 and r == 'R') or (x == 5 and r == 'D'):
+    if (x == 1 and r == 'U') or (y == 1 and r == 'L') or (y == n and r == 'R') or (x == n and r == 'D'):
         continue
     if r == 'L': y -= 1
     elif r == 'R': y += 1
@@ -22,7 +22,7 @@ for r in routes:
 print(x, y)
 
 
-# ans)
+# ans) O(N)
 
 # In[3]:
 
@@ -52,7 +52,7 @@ for plan in plans:
 print(x,y)
 
 
-# <b>시각
+# <b> 2. 시각
 
 # ans)
 
@@ -72,28 +72,7 @@ for i in range(h + 1):
 print(count)
 
 
-# <b>왕실의 나이트
-
-# ans)
-
-# In[18]:
-
-
-input_data = input()
-row = int(cur[1])
-col = ord(cur[0]) - ord('a') + 1
-routes = [[-1, -2], [1, -2], [-1, 2], [1, 2],
-          [-2, 1], [-2, -1], [2, 1], [2, -1]]
-
-result = 0
-for i, j in routes:
-    tr = row + i
-    tc = col + j
-    if tr >= 1 and tc >= 1 and tr <= 8 and tc <= 8:
-        result += 1
-
-print(count)
-
+# <b> 3. 왕실의 나이트
 
 # ans)
 
@@ -117,7 +96,7 @@ for step in steps:
 print(result)
 
 
-# <b>게임 개발
+# <b> 4. 게임 개발
 
 # ans)
 
