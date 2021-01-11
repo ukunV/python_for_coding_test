@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <b>음료수 얼려 먹기
+# <b> 1. 음료수 얼려 먹기
 
 # ans)
 
@@ -41,7 +41,7 @@ for i in range(n):
 print(result)
 
 
-# <b>미로 탈출
+# <b> 2. 미로 탈출
 
 # ans)
 
