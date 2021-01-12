@@ -18,7 +18,9 @@ for i in range(len(array)):
 print(array)
 
 
-# <b>insertion sort - O(n^2) (almost sorted - O(n))
+# <b>insertion sort - O(n^2) (데이터가 거의 정렬되어 있는 상태 - O(n))
+
+# 데이터가 거의 정렬되어 있는 상태에서 삽입이 일어날때는 다른 정렬에 비해 월등하게 빠르다.
 
 # In[2]:
 
@@ -35,7 +37,7 @@ for i in range(1, len(array)):
 print(array)
 
 
-# <b>quick sort
+# <b>quick sort - O(NlogN)
 
 # In[4]:
 

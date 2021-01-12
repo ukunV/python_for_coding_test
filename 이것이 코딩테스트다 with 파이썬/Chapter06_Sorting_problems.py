@@ -54,6 +54,8 @@ for student in array:
 
 # <b>두 배열의 원소 교체
 
+# ans)
+
 # In[4]:
 
 
