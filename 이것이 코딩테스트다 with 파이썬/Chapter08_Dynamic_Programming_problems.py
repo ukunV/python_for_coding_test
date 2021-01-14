@@ -1,7 +1,37 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <b> 개미 전사
+# <b> 1. 1로 만들기
+
+# ans) a_i = min(a_i - 1, a_i / 2, a_i / 3, a_i / 5) + 1
+
+# In[ ]:
+
+
+# 정수 X를 입력받기
+x = int(input())
+
+# 앞서 계산된 결과를 저장하기 위한 DP 테이블 초기화
+d = [0] * 30001
+
+# 다이나믹 프로그래밍(Dynamic Programming) 진행(보텀업)
+for i in range(2, x + 1):
+    # 현재의 수에서 1을 빼는 경우
+    d[i] = d[i - 1] + 1
+    # 현재의 수가 2로 나누어 떨어지는 경우
+    if i % 2 == 0:
+        d[i] = min(d[i], d[i // 2] + 1)
+    # 현재의 수가 3으로 나누어 떨어지는 경우
+    if i % 3 == 0:
+        d[i] = min(d[i], d[i // 3] + 1)
+    # 현재의 수가 5로 나누어 떨어지는 경우
+    if i % 5 == 0:
+        d[i] = min(d[i], d[i // 5] + 1)
+        
+print(d[x])
+
+
+# <b> 2. 개미 전사
 
 # ans) a_i = max(a_i-1, a_i-2 + k_i)
 
@@ -26,7 +56,7 @@ for i in range(2, n):
 print(d[n - 1])
 
 
-# <b> 바닥 공사
+# <b> 3. 바닥 공사*
 
 # ans) a_i = a_i-1 + a_i-2 + a_i-2 = a_i-1 + a_i-2 * 2
 
@@ -49,10 +79,11 @@ for i in range(3, n+1):
 print(d[n])
 
 
-# <b> 효율적인 화폐 구성
+# <b> 4. 효율적인 화폐 구성*
 
-# ans) a_i_k를 만드는 방법이 존재하는 경우: a_i = min(a_i, a_i-k + 1)
-#      a_i-k를 만드는 방법이 존재하지 않는 경우: a_i = 10,001
+# ans)
+#  - a_i-k를 만드는 방법이 존재하는 경우: a_i = min(a_i, a_i-k + 1)
+#  - a_i-k를 만드는 방법이 존재하지 않는 경우: a_i = 10,001
 
 # In[1]:
 
