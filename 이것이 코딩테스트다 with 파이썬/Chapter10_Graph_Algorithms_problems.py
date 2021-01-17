@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <b> 팀 결성
+# <b> 1. 팀 결성
 
 # ans)
 
@@ -46,7 +46,7 @@ for i in range(m):
             print('NO')
 
 
-# <b> 도시 분할 계획
+# <b> 2. 도시 분할 계획
 
 # ans) 최소 신장 트리를 찾은 뒤에 간선 중 가장 비용이 큰 간선을 제거 -> 최소 신장 트리 2개
 
@@ -103,7 +103,7 @@ for edge in edges:
 print(result - last)
 
 
-# <b> 커리큘럼
+# <b> 3. 커리큘럼
 
 # ans)
 

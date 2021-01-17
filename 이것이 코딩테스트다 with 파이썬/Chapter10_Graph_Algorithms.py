@@ -3,7 +3,7 @@
 
 # <b> 기본적인 서로소 집합 알고리즘 소스코드 - O(V)
 
-# In[2]:
+# In[1]:
 
 
 # 특정 원소가 속한 집합을 찾기
@@ -49,7 +49,7 @@ for i in range(1, v + 1):
 
 # <b> 경로 압축 기법으로 인해 개선된 서로소 집합 알고리즘 소스코드 - O(V + M(log_(2-M/V) V)
 
-# In[1]:
+# In[2]:
 
 
 # 특정 원소가 속한 집합을 찾기
@@ -59,7 +59,7 @@ def find_parent(parent, x):
         return find_parent(parent, parent[x])
     return parent[x]
 
-# 두 원소가 속한 집합을 합치기
+# 두 원소가 속한 집합을 합치기Q
 def union_parent(parent, a, b):
     a = find_parent(parent, a)
     b = find_parent(parent, b)
@@ -84,7 +84,8 @@ for i in range(e):
 # 각 원소가 속한 집합 출력
 print('각 원소가 속한 집합: ', end='')
 for i in range(1, v + 1):
-    print(find_parent(parent, i), end=' ') 
+    print(find_parent(parent, i), end=' ')
+    
 print()
 
 # 부모 테이블 내용 출력
@@ -95,7 +96,7 @@ for i in range(1, v + 1):
 
 # <b> 서로소 집합을 활용한 사이클 판별 소스코드
 
-# In[1]:
+# In[4]:
 
 
 # 특정 원소가 속한 집합을 찾기
@@ -138,6 +139,10 @@ if cycle:
     print("사이클이 발생했습니다.")
 else:
     print("사이클이 발생하지 않았습니다.")
+    
+print('부모 테이블: ', end='')
+for i in range(1, v + 1):
+    print(parent[i], end=' ')
 
 
 # <b> Kruscal 알고리즘(최소 신장 트리 알고리즘) 소스코드
@@ -195,7 +200,7 @@ print(result)
 
 # <b> 위상 정렬 소스코드 - O(V + E)
 
-# In[3]:
+# In[6]:
 
 
 from collections import deque
@@ -213,7 +218,11 @@ for _ in range(e):
     graph[a].append(b) # 정점 A에서 B로 이동 가능
     # 진입차수를 1 증가
     indegree[b] += 1
-    
+
+print('--------------------------------')
+print('graph: ', graph) # graph 상태 확인    
+print('--------------------------------')
+
 # 위상 정렬 함수
 def topology_sort():
     result = [] # 알고리즘 수행 결과를 담을 리스트
@@ -237,8 +246,10 @@ def topology_sort():
                 q.append(i)
                 
     # 위상 정렬을 수행한 결과 출력
+    print('결과: ', end='')
     for i in result:
         print(i, end=' ')
+            
             
 topology_sort()
 
