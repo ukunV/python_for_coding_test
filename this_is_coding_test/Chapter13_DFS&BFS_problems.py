@@ -296,9 +296,57 @@ print(solution(p))
 
 # <b> 19. 연산자 끼워 넣기
 
+# In[55]:
+
+
+from itertools import permutations
+
+n = int(input())
+data = list(input().split())
+add, sub, mul, div = map(int, input().split())
+
+min_value = 1e9
+max_value = -1e9
+
+opers = ''
+while True:
+    if add > 0:
+        add -= 1
+        opers += '+ '
+    if sub > 0:
+        sub -= 1
+        opers += '- '
+    if mul > 0:
+        mul -= 1
+        opers += '* '
+    if div > 0:
+        div -= 1
+        opers += '/ '
+    if add == 0 and sub == 0 and mul == 0 and div == 0:
+        break
+        
+opers = opers.split()
+candidates = list(permutations(opers, n - 1))
+
+for candidate in candidates:
+    result = 0
+    temp = data[0]
+    for i in range(len(candidate)):
+        temp = temp + candidate[i] + data[i + 1]
+        result = eval(temp)
+        result = int(result)
+        temp = str(result)
+        
+    min_value = min(result, min_value)
+    max_value = max(result, max_value)
+    
+print(max_value)
+print(min_value)
+
+
 # ans)
 
-# In[1]:
+# In[3]:
 
 
 n = int(input())
@@ -330,7 +378,7 @@ def dfs(i, now):
             sub += 1
         if mul > 0:
             mul -= 1
-            dfs(i + 1, now + data[i])
+            dfs(i + 1, now * data[i])
             mul += 1
         if div > 0:
             div -= 1
