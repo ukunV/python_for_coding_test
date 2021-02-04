@@ -3,7 +3,7 @@
 
 # <b> 31. 금광
 
-# ans)   dp[i][j] = array[i][j] + max(dp[i - 1][j - 1], dp[i][j - 1], dp[i + 1][j - 1])
+# ans) dp[i][j] = array[i][j] + max(dp[i - 1][j - 1], dp[i][j - 1], dp[i + 1][j - 1])
 
 # In[2]:
 
@@ -47,10 +47,69 @@ for tc in range(int(input())):
 
 # <b> 32. 정수 삼각형
 
+# In[17]:
+
+
+n = int(input())
+
+data = []
+for _ in range(n):
+    data.append(list(map(int, input().split())))
+    
+results = []
+for i in range(len(data[n - 1])):
+    result = 0
+    result += data[n - 1][i]
+    connect = i
+    for j in range(n - 2, -1, -1):
+        if connect == 0:
+            result += data[j][0]
+            connect = 0
+        elif connect == len(data[j]):
+            result += data[j][len(data[j]) - 1]
+            connect = len(data[j]) - 1
+        else:
+            max_value = max(data[j][connect - 1], data[j][connect])
+            result += max_value
+            if max_value == data[i][connect - 1]:
+                connect = connect - 1
+            else:
+                connect = connect
+        
+    results.append(result)
+        
+print(results)
+print(max(results))
+
+
+# ans) dp[i][j] = array[i][j] + max(dp[i - 1][j - 1], dp[i - 1][j])
+
 # In[ ]:
 
 
+n = int(input())
+dp = [] # 다이나믹 프로그래밍을 위한 DP 테이블 초기화
 
+for _ in range(n):
+    dp.append(list(map(int, input().split())))
+    
+# 다이나믹 프로그래밍으로 두 뻔째 줄부터 내려가면서 확인
+for i in range(1, n):
+    for j in range(i + 1):
+        # 왼쪽 위에서 내려오는 경우
+        if j == 0:
+            up_left = 0
+        else:
+            up_left = dp[i - 1][j - 1]
+        # 바로 위에서 내려오는 경우
+        if j == i:
+            up = 0
+        else:
+            up = dp[i - 1][j]
+        # 최대 합을 저장
+        dp[i][j] = dp[i][j] + max(up_left, up)
+        
+print(max(dp[n - 1]))
 
 
 # <b> 33. 퇴사
