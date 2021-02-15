@@ -3,6 +3,8 @@
 
 # <b> 1. 큰 수의 법칙
 
+# try)
+
 # In[2]:
 
 
@@ -17,7 +19,24 @@ t = f*k + s
 res = 0
 res += (m//(k+1)) * t
 res += f * (m%(k+1))
+
 print(res)
+
+
+# In[ ]:
+
+
+n, m, k = map(int, input().split())
+data = list(map(int, input().split()))
+
+data.sort(reverse=True)
+
+temp = data[0] * k + data[1]
+result = 0
+result += temp * (m // (k + 1))
+result += data[0] * (m % (k + 1))
+
+print(result)
 
 
 # ans)
@@ -48,7 +67,7 @@ while True:
 print(result)
 
 
-# 반복되는 수열 활용
+# 반복되는 수열 활용)
 
 # In[3]:
 
@@ -75,9 +94,26 @@ print(result)
 
 # <b> 2. 숫자 카드 게임
 
+# try)
+
+# In[ ]:
+
+
+n, m = map(int, input().split())
+data = []
+big = []
+
+for _ in range(n):
+    temp = list(map(int, input().split()))
+    data.append(temp)
+    big.append(min(temp))
+
+print(max(big))
+
+
 # ans)
 
-# min() 함수 활용
+# min() 함수 활용)
 
 # In[3]:
 
@@ -97,7 +133,7 @@ for i in range(n):
 print(result)
 
 
-# 반복문 활용
+# 반복문 활용)
 
 # In[2]:
 
@@ -121,6 +157,8 @@ print(result)
 
 # <b> 3. 1이 될 때까지
 
+# try)
+
 # In[27]:
 
 
@@ -133,6 +171,24 @@ while n != 1:
         count += 1
     else:
         n -= 1
+        count += 1
+
+print(count)
+
+
+# In[ ]:
+
+
+n, k = map(int, input().split())
+
+count = 0
+
+while n > 1:
+    if n % k != 0:
+        n -= 1
+        count += 1
+    if n % k == 0:
+        n //= k
         count += 1
 
 print(count)

@@ -5,6 +5,24 @@
 
 # <b> 거스름돈 -  O(K)
 
+# try)
+
+# In[ ]:
+
+
+n = int(input())
+coins = [500, 100, 50, 10]
+
+result = 0
+for coin in coins:
+    result += n // coin
+    n %= coin
+    if n == 0:
+        break
+
+print(result)
+
+
 # ans) 가지고 있는 동전 중에서 큰 단위가 항상 작은 단위의 배수이므로 작은 단위의 동전들을 종합해 다른 해가 나올 수 없기 때문이다.
 
 # In[ ]:

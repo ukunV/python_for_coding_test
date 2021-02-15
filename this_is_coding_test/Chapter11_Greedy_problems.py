@@ -3,6 +3,14 @@
 
 # <b> 01. 모험가 길드
 
+# try)
+
+# In[ ]:
+
+
+
+
+
 # ans)
 
 # In[3]:
@@ -26,20 +34,7 @@ print(result) # 총 그룹의 수 출력
 
 # <b> 02. 곱하기 혹은 더하기
 
-# In[9]:
-
-
-data = input()
-
-result = 1
-
-for i in range(len(data)):
-    if(data[i] == '0'):
-        continue
-    result *= int(data[i])
-    
-print(result)
-
+# try)
 
 # ans)
 
@@ -64,7 +59,9 @@ print(result)
 
 # <b> 03. 문자열 뒤집기
 
-# In[18]:
+# try)
+
+# In[10]:
 
 
 data = input()
@@ -80,7 +77,35 @@ for i in range(len(data) - 1):
     else:
         all_1 += 1
         
-min(all_0, all_1)
+print(min(all_0, all_1))
+
+
+# In[16]:
+
+
+data = input()
+
+temp = data[0]
+
+if temp == '0':
+    cnt_0 = 1
+    cnt_1 = 0
+else:
+    cnt_0 = 0
+    cnt_1 = 1
+    
+for i in range(1, len(data)):
+    if data[i] == temp:
+        continue
+    else:
+        if data[i] == '0':
+            cnt_0 += 1
+            temp = '0'
+        else:
+            cnt_1 += 1
+            temp = '1'
+            
+print(min(cnt_0, cnt_1))
 
 
 # ans)
@@ -113,6 +138,8 @@ print(min(count_0, count_1))
 
 # <b> 04. 만들 수 없는 금액
 
+# try)
+
 # ans)
 
 # In[20]:
@@ -134,6 +161,8 @@ print(target)
 
 
 # <b> 05. 볼링공 고르기
+
+# try)
 
 # In[32]:
 
@@ -178,44 +207,7 @@ print(result)
 
 # <b> 06. 무지의 먹방 라이브
 
-# In[15]:
-
-
-food_times = list(map(int, input().split()))
-k = int(input())
-
-round = k // len(food_times)
-remain = k % len(food_times)
-
-for i in range(len(food_times)):
-    food_times[i] = food_times[i] - round
-
-i = 0
-while remain > 0:
-    if food_times[i] == 0:
-        i += 1
-        if i == len(food_times):
-            i = 0
-        continue
-    food_times[i] -= 1
-    last_index = i
-    remain -= 1
-    i += 1
-    if i == len(food_times):
-            i = 0
-            
-last_index += 1
-if last_index == len(food_times):
-    last_index = 0
-    
-for i in range(last_index, len(food_times)):
-    if food_times[i] != 0:
-        print(i + 1)
-        break
-    if i == len(food_times) - 1:
-        print(-1)
-        break
-
+# try)
 
 # ans)
 
