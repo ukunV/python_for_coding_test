@@ -8,7 +8,20 @@
 # In[ ]:
 
 
+n = int(input())
+data = list(map(int, input().split()))
+data.sort()
 
+cnt_group = 0
+cnt_people = 0
+
+for i in data:
+    cnt_people += 1
+    if cnt_people >= i:
+        cnt_group += 1
+        cnt_people = 0
+        
+print(cnt_group)
 
 
 # ans)
@@ -32,7 +45,7 @@ for i in data: # 공포도를 낮은 것부터 하나씩 확인하며
 print(result) # 총 그룹의 수 출력
 
 
-# <b> 02. 곱하기 혹은 더하기
+# <b> 02. 곱하기 혹은 더하기 *
 
 # try)
 
@@ -136,7 +149,7 @@ for i in range(len(data) - 1):
 print(min(count_0, count_1))
 
 
-# <b> 04. 만들 수 없는 금액
+# <b> 04. 만들 수 없는 금액 *
 
 # try)
 
@@ -168,16 +181,19 @@ print(target)
 
 
 n,m = map(int, input().split())
-k = list(map(int, input().split()))
-w = [0] * (m + 1)
+ws = list(map(int, input().split()))
+wc = [0] * (n + 1)
 
-for i in k:
-    w[i] += 1
-
+for w in ws:
+    wc[w] += 1
+    
 result = 0
+temp = 0
 for i in range(1, n):
-    result += i
-result = result - sum(w) + m
+    if wc[i] == 0:
+        continue
+    temp += wc[i]
+    result += ((sum(wc) - temp) * wc[i])
 
 print(result)
 
@@ -205,7 +221,7 @@ for i in range(1, m + 1):
 print(result)
 
 
-# <b> 06. 무지의 먹방 라이브
+# <b> 06. 무지의 먹방 라이브 *
 
 # try)
 

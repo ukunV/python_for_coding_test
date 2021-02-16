@@ -3,6 +3,8 @@
 
 # <b> 1. 상하좌우
 
+# try)
+
 # In[1]:
 
 
@@ -19,6 +21,45 @@ for r in routes:
     elif r == 'U': x -= 1
     else: x += 1
     
+print(x, y)
+
+
+# In[ ]:
+
+
+n = int(input())
+directions = list(input().split())
+
+x, y = 1, 1
+dx = [0, 0, -1, 1]
+dy = [-1, 1, 0, 0]
+
+for direction in directions:
+    if direction == 'L':
+        tx = x + dx[0]
+        ty = y + dy[0]
+        if tx > n or tx < 1 or ty > n or ty < 1:
+            continue
+        x, y = tx, ty
+    elif direction == 'R':
+        tx = x + dx[1]
+        ty = y + dy[1]
+        if tx > n or tx < 1 or ty > n or ty < 1:
+            continue
+        x, y = tx, ty
+    elif direction == 'U':
+        tx = x + dx[2]
+        ty = y + dy[2]
+        if tx > n or tx < 1 or ty > n or ty < 1:
+            continue
+        x, y = tx, ty
+    elif direction == 'D':
+        tx = x + dx[3]
+        ty = y + dy[3]
+        if tx > n or tx < 1 or ty > n or ty < 1:
+            continue
+        x, y = tx, ty
+        
 print(x, y)
 
 
@@ -54,6 +95,24 @@ print(x,y)
 
 # <b> 2. 시각
 
+# try)
+
+# In[ ]:
+
+
+n = int(input())
+
+count = 0
+for i in range(0, n + 1):
+    for j in range(0, 60):
+        for k in range(0, 60):
+            time = str(i) + str(j) + str(k)
+            if '3' in time:
+                count += 1
+                
+print(count)
+
+
 # ans)
 
 # In[9]:
@@ -73,6 +132,28 @@ print(count)
 
 
 # <b> 3. 왕실의 나이트
+
+# try)
+
+# In[ ]:
+
+
+loc = input()
+row = int(loc[1])
+col = ord(loc[0]) - 96
+
+paths = [(-2, -1), (-1, -2), (1, -2), (2, -1), (2, 1), (1, 2), (-1, 2), (-2, 1)]
+
+count = 0
+for path in paths:
+    trow = row + path[0]
+    tcol = col + path[1]
+    if trow > 8 or trow < 1 or tcol > 8 or tcol < 1:
+        continue
+    count += 1
+    
+print(count)
+
 
 # ans)
 
@@ -96,7 +177,7 @@ for step in steps:
 print(result)
 
 
-# <b> 4. 게임 개발
+# <b> 4. 게임 개발 *
 
 # ans)
 
