@@ -49,6 +49,21 @@ print(result) # 총 그룹의 수 출력
 
 # try)
 
+# In[ ]:
+
+
+ns = input()
+
+result = int(ns[0])
+for i in range(1, len(ns)):
+    if int(ns[i]) == 1 or int(ns[i]) == 0 or result == 0 or result == 1:
+        result += int(ns[i])
+    else:
+        result *= int(ns[i])
+        
+print(result)
+
+
 # ans)
 
 # In[10]:

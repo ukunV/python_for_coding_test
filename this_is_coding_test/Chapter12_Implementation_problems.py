@@ -3,6 +3,8 @@
 
 # <b> 07. 럭키 스트레이트
 
+# try)
+
 # In[16]:
 
 
@@ -21,6 +23,27 @@ if left == right:
     print("LUCKY")
 else:
     print("READY")
+
+
+# In[ ]:
+
+
+data = input()
+
+mid = len(data) // 2
+left = data[:mid]
+right = data[mid:]
+
+sum_l = 0
+sum_r = 0
+for i in range(mid):
+    sum_l += int(left[i])
+    sum_r += int(right[i])
+    
+if sum_l == sum_r:
+    print('LUCKY')
+else:
+    print('READY')
 
 
 # ans)
@@ -49,6 +72,8 @@ else:
 
 # <b> 08. 문자열 재정렬
 
+# try)
+
 # In[31]:
 
 
@@ -68,6 +93,32 @@ if sum == 0:
     print(''.join(alp))
 else:
     print(''.join(alp) + str(sum))
+
+
+# In[ ]:
+
+
+data = input()
+
+alp = []
+num = []
+
+for i in range(len(data)):
+    if 65 <= ord(data[i]) and ord(data[i]) <= 90:
+        alp.append(data[i])
+    else:
+        num.append(int(data[i]))
+        
+alp.sort()
+
+result = ''
+for i in range(len(alp)):
+    result += alp[i]
+
+if sum != 0:    
+    result += str(sum(num))
+
+print(result)
 
 
 # ans)
