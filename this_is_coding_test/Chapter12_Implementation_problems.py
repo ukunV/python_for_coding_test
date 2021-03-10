@@ -172,7 +172,9 @@ if value != 0:
 print(''.join(result))
 
 
-# <b> 09. 문자열 압축 *
+# <b> 09. 문자열 압축
+
+# try)
 
 # ans)
 
@@ -209,6 +211,8 @@ print(solution('ababcdcdababcdcd'))
 
 
 # <b> 10. 자물쇠와 열쇠
+
+# try)
 
 # ans)
 
@@ -280,6 +284,8 @@ print(solution(key, lock))
 
 # <b> 11. 뱀
 
+# try)
+
 # ans)
 
 # In[2]:
@@ -349,7 +355,9 @@ def simulate():
 print(simulate())
 
 
-# <b> 12. 기둥과 보 설치**
+# <b> 12. 기둥과 보 설치
+
+# try)
 
 # ans)
 
@@ -387,6 +395,8 @@ def solution(n, build_frame):
 
 
 # <b> 13. 치킨 배달
+
+# try)
 
 # ans)
 
@@ -432,6 +442,8 @@ print(result)
 
 
 # <b> 14. 외벽 점검
+
+# try)
 
 # ans)
 
