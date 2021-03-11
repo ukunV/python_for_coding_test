@@ -3,6 +3,8 @@
 
 # <b> 15. 특정 거리의 도시 찾기
 
+# try)
+
 # ans)
 
 # In[6]:
@@ -48,6 +50,8 @@ if check == False:
 
 
 # <b> 16. 연구소
+
+# try)
 
 # In[11]:
 
@@ -184,6 +188,8 @@ print(result)
 
 # <b> 17. 경쟁적 전염
 
+# try)
+
 # ans)
 
 # In[3]:
@@ -237,6 +243,8 @@ print(graph[target_x - 1][target_y - 1])
 
 
 # <b> 18. 괄호 변환
+
+# try)
 
 # ans)
 
@@ -295,6 +303,8 @@ print(solution(p))
 
 
 # <b> 19. 연산자 끼워 넣기
+
+# try)
 
 # In[55]:
 
@@ -395,6 +405,8 @@ print(min_value)
 
 # <b> 20. 감시 피하기
 
+# try)
+
 # ans)
 
 # In[2]:
@@ -487,6 +499,8 @@ else:
 
 # <b> 21. 인구 이동
 
+# try)
+
 # ans)
 
 # In[1]:
@@ -559,7 +573,9 @@ while True:
 print(total_count)
 
 
-# <b> 22. 블록 이동하기***
+# <b> 22. 블록 이동하기
+
+# try)
 
 # ans)
 
