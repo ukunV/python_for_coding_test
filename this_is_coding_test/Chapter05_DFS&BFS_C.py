@@ -3,7 +3,7 @@
 
 # <b>큐 예제
 
-# In[3]:
+# In[15]:
 
 
 from collections import deque
@@ -75,7 +75,7 @@ print(graph)
 
 # <b>DFS 예제
 
-# In[3]:
+# In[16]:
 
 
 # DFS 메서드 정의
@@ -101,7 +101,7 @@ dfs(graph, 1, visited)
 
 # <b>BFS 예제
 
-# In[15]:
+# In[6]:
 
 
 from collections import deque
