@@ -6,6 +6,7 @@
 # In[ ]:
 
 
-def sol(s):
-    return int(s)
+def solution(s):
+    answer = int(s)
+    return answer
 

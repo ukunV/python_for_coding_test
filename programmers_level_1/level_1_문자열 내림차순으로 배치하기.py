@@ -3,15 +3,16 @@
 
 # <b>Level 1_문자열 내림차순으로 배치하기
 
-# In[1]:
+# In[8]:
 
 
 def solution(s):
-    answer = ''
-    ans = list(s)
-    ans.sort()
-    for i in range(len(s)-1,-1,-1):
-        answer += ans[i]
+    answer = list(s)
+    
+    answer.sort(reverse = True)
+    
+    answer = ''.join(answer)
+    
     return answer
 
 print(solution('Zbatews'))

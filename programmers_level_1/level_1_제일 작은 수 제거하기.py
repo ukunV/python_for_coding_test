@@ -7,11 +7,10 @@
 
 
 def solution(arr):
-    answer = []
     if len(arr) == 1:
-        answer.append(-1)
-        return answer
-    answer = arr
-    answer.remove(min(answer))
-    return answer
+        return [-1]
+    
+    arr.remove(min(arr))
+    
+    return arr
 

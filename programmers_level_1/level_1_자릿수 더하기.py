@@ -8,8 +8,9 @@
 
 def solution(n):
     answer = 0
-    temp = str(n)
-    for i in temp:
+    
+    for i in str(n):
         answer += int(i)
+
     return answer
 
