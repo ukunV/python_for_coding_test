@@ -8,11 +8,15 @@
 
 def solution(x):
     answer = True
-    temp = str(x)
+    tmp = str(x)
+    
     sum = 0
-    for i in temp:
+    for i in tmp:
         sum += int(i)
-    if x % sum != 0:
+        
+    if x % sum == 0:
+        return answer
+    else:
         answer = False
-    return answer
+        return answer
 

@@ -6,10 +6,11 @@
 # In[ ]:
 
 
-def solution(n):
+def solution(n):    
     answer = []
-    temp = str(n)
-    for i in range(len(temp)-1, -1,-1):
-        answer.append(int(temp[i]))
+    
+    for i in range(len(str(n)) - 1, -1, -1):
+        answer.append(int(str(n)[i]))
+        
     return answer
 

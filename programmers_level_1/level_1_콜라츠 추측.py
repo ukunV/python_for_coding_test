@@ -8,19 +8,22 @@
 
 def solution(num):
     answer = 0
-    count = 0
-    while 1:
-        if count == 500:
-            answer = -1
-            break
-        if num == 1:
-            answer = count
-            break
+    
+    if num == 1:
+        return answer
+    
+    for _ in range(500):
         if num % 2 == 0:
             num /= 2
-            count += 1
+            answer += 1
+            if num == 1:
+                break
         else:
             num = num * 3 + 1
-            count += 1
+            answer += 1
+            
+    if num != 1:
+        answer = -1
+        
     return answer
 

@@ -6,13 +6,15 @@
 # In[ ]:
 
 
+import math
+
 def solution(n):
-    answer = 0
-    for i in range(n+1):
-        if i**2 == n:
-            answer = (i+1)**2
-            break
-        if i == n-1:
-            answer = -1
+    tmp = int(math.pow(n, 0.5))
+    
+    if tmp**2 == n:
+        answer = (tmp + 1)**2
+    else:
+        answer = -1
+        
     return answer
 

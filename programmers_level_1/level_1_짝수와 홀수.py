@@ -7,10 +7,8 @@
 
 
 def solution(num):
-    answer = ''
     if num % 2 == 0:
-        answer += 'Even'
+        return "Even"
     else:
-        answer += 'Odd'
-    return answer
+        return "Odd"
 
