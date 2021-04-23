@@ -3,7 +3,7 @@
 
 # <b>selection sort - O(n^2)
 
-# In[1]:
+# In[2]:
 
 
 array = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8]
@@ -95,7 +95,7 @@ print(quick_sort(array))
 
 # <b>count sort - O(N+K)
 
-# In[8]:
+# In[10]:
 
 
 # 모든 원소의 값이 0보다 크거나 같다고 가정
@@ -109,13 +109,17 @@ for i in range(len(array)):
 for i in range(len(count)): # 리스트에 기록된 정렬 정보 확인
     for j in range(count[i]):
         print(i, end = ' ') # 띄어쓰기를 구분으로 등장한 횟수만큼 인덱스 출력
+        
+print()
+for i in range(len(count)):
+    print(i, ':', count[i], ', ', end='')
 
 
 # <b> ※ sorted(), sort() - O(NlogN)
 
 # <b> key를 활용한 소스코드 - O(NlogN)
 
-# In[1]:
+# In[11]:
 
 
 array = [('가', 2), ('나', 5), ('다', 3)]
@@ -124,5 +128,15 @@ def setting(data):
     return data[1]
 
 result = sorted(array, key=setting)
+print(result)
+
+
+# In[15]:
+
+
+array = [('가', 2), ('나', 5), ('다', 3)]
+
+result = sorted(array, key=lambda x:x[1])
+
 print(result)
 
