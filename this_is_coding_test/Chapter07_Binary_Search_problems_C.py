@@ -45,7 +45,7 @@ for i in x:
 
 # ans) 계수 정렬
 
-# In[5]:
+# In[1]:
 
 
 # N(가게의 부품 개수)을 입력받기
@@ -64,7 +64,7 @@ x = list(map(int, input().split()))
 # 손님이 확인 요청한 부품 번호를 하나씩 확인
 for i in x:
     # 해당 부품이 존재하는지 확인
-    if array[i] == 1:
+    if array[i] >= 1:
         print('yes', end=' ')
     else:
         print('no', end=' ')
