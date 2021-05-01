@@ -1,28 +1,51 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <b> 타겟 넘버
+# <b> level_2_타겟 넘버
 
-# In[2]:
+# ans)
 
+# In[ ]:
 
-from collections import deque
 
 def solution(numbers, target):
-    queue = deque([(0, 0)])
-    count = 0
+    answer = 0
+    n_len = len(numbers)
     
-    while queue:
-        sum, idx = queue.popleft()
-        if idx == len(numbers):
-            if sum == target:
-                count += 1
-                
+    def dfs(idx, result):
+        if idx == n_len:
+            if result == target:
+                nonlocal answer
+                answer += 1
         else:
-            number = numbers[idx]
-            queue.append((sum + number, idx + 1))
-            queue.append((sum - number, idx + 1))
-    return count
+            dfs(idx + 1, result + numbers[idx])
+            dfs(idx + 1, result - numbers[idx])
+    
+    dfs(0, 0)
+    return answer
 
-print(solution([1, 1, 1, 1, 1], 3))
+
+# In[ ]:
+
+
+def solution(numbers, target):
+    if not numbers and target == 0:
+        return 1
+    elif not numbers:
+        return 0
+    else:
+        return solution(numbers[1:], target-numbers[0]) + solution(numbers[1:], target+numbers[0])
+
+
+# In[16]:
+
+
+from itertools import product
+
+def solution(numbers, target):
+    l = [(x, -x) for x in numbers]
+    s = list(map(sum, product(*l)))
+    return s.count(target)
+
+print(solution([1,1,1,1,1], 3))
 
