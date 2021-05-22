@@ -145,7 +145,7 @@ for i in range(1, v + 1):
     print(parent[i], end=' ')
 
 
-# <b> Kruscal 알고리즘(최소 신장 트리 알고리즘) 소스코드
+# <b> Kruscal 알고리즘(최소 신장 트리 알고리즘) 소스코드 - O(ElogE)(E: 간선의 갯수)
 
 # In[3]:
 
@@ -200,7 +200,7 @@ print(result)
 
 # <b> 위상 정렬 소스코드 - O(V + E)
 
-# In[6]:
+# In[1]:
 
 
 from collections import deque
