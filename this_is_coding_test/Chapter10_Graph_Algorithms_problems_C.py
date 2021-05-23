@@ -89,7 +89,7 @@ for _ in range(e):
     
 # 간선을 비용순으로 정렬
 edges.sort()
-last = 0 # 최소 신장 ㅌ ㅡ리에 포함되는 간선 중에서 가장 비용이 큰 간선
+last = 0 # 최소 신장 트리에 포함되는 간선 중에서 가장 비용이 큰 간선
 
 # 간선을 하나씩 확인하며
 for edge in edges:
@@ -107,7 +107,7 @@ print(result - last)
 
 # ans)
 
-# In[9]:
+# In[5]:
 
 
 from collections import deque
