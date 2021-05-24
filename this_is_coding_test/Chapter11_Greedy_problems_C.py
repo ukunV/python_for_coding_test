@@ -64,6 +64,21 @@ for i in range(1, len(ns)):
 print(result)
 
 
+# In[2]:
+
+
+n = input()
+
+result = int(n[0])
+for i in range(1, len(n)):
+    if int(n[i]) in (0, 1) or result in (0, 1):
+        result += int(n[i])
+    else:
+        result *= int(n[i])
+        
+print(result)
+
+
 # ans)
 
 # In[10]:
@@ -108,7 +123,7 @@ for i in range(len(data) - 1):
 print(min(all_0, all_1))
 
 
-# In[16]:
+# In[6]:
 
 
 data = input()
@@ -242,7 +257,7 @@ print(result)
 
 # ans)
 
-# In[ ]:
+# In[1]:
 
 
 import heapq
@@ -273,6 +288,6 @@ def solution(food_times, k):
     result = sorted(q, key = lambda x: x[1]) # 음식의 번호 기준으로 정렬
     return result[(k - sum_value) % length][1]
 
-food_times = [8, 6, 4]
-print(solution(food_times, 15), '번')
+food_times = [3, 1, 2]
+print(solution(food_times, 5), '번')
 
