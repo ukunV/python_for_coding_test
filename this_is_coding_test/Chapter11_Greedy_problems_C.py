@@ -179,7 +179,7 @@ for i in range(len(data) - 1):
 print(min(count_0, count_1))
 
 
-# <b> 04. 만들 수 없는 금액 *
+# <b> 04. 만들 수 없는 금액
 
 # try)
 
@@ -251,7 +251,7 @@ for i in range(1, m + 1):
 print(result)
 
 
-# <b> 06. 무지의 먹방 라이브 *
+# <b> 06. 무지의 먹방 라이브
 
 # try)
 
