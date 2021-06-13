@@ -5,7 +5,7 @@
 
 # <b> 거스름돈 -  O(K)
 
-# try)
+# try_1)
 
 # In[ ]:
 
@@ -20,6 +20,24 @@ for coin in coins:
     if n == 0:
         break
 
+print(result)
+
+
+# try_2)
+
+# In[ ]:
+
+
+n = int(input())
+coin=[500, 100, 50, 10]
+
+result = 0
+for i in coins:
+    result += n // coin
+    n = n % coin
+    if n == 0:
+        break
+        
 print(result)
 
 
