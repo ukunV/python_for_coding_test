@@ -3,7 +3,7 @@
 
 # <b> 1. 큰 수의 법칙
 
-# try)
+# try_1)
 
 # In[2]:
 
@@ -15,15 +15,17 @@ nums.sort()
 f = nums[n-1]
 s = nums[n-2]
 
-t = f*k + s
+t = f * k + s
 res = 0
-res += (m//(k+1)) * t
-res += f * (m%(k+1))
+res += (m // (k + 1)) * t
+res += f * (m % (k + 1))
 
 print(res)
 
 
-# In[ ]:
+# try_2)
+
+# In[4]:
 
 
 n, m, k = map(int, input().split())
@@ -31,12 +33,15 @@ data = list(map(int, input().split()))
 
 data.sort(reverse=True)
 
-temp = data[0] * k + data[1]
-result = 0
-result += temp * (m // (k + 1))
-result += data[0] * (m % (k + 1))
+first= data[0]
+second = data[1]
 
-print(result)
+answer = 0
+repeat = (first * k) + second
+answer += (m // (k + 1)) * repeat
+answer += (m % (k + 1)) * first
+
+print(answer)
 
 
 # ans)
@@ -94,7 +99,7 @@ print(result)
 
 # <b> 2. 숫자 카드 게임
 
-# try)
+# try_1)
 
 # In[ ]:
 
@@ -109,6 +114,22 @@ for _ in range(n):
     big.append(min(temp))
 
 print(max(big))
+
+
+# try_2)
+
+# In[5]:
+
+
+n, m = map(int, input().split())
+
+lrg = []
+
+for i in range(n):
+    data = list(map(int, input().split()))
+    lrg.append(min(data))
+
+print(max(lrg))
 
 
 # ans)
@@ -159,38 +180,27 @@ print(result)
 
 # try)
 
-# In[27]:
-
-
-n, k = map(int, input().split())
-count = 0
-
-while n != 1:
-    if n % k == 0:
-        n /= k
-        count += 1
-    else:
-        n -= 1
-        count += 1
-
-print(count)
-
-
-# In[ ]:
+# In[10]:
 
 
 n, k = map(int, input().split())
 
 count = 0
 
-while n > 1:
-    if n % k != 0:
-        n -= 1
-        count += 1
+while True:
+    if n < k:
+        count += n - 1
+        break
+    
     if n % k == 0:
         n //= k
         count += 1
-
+        continue
+    else:
+        n -= 1
+        count += 1
+        continue
+        
 print(count)
 
 
