@@ -36,7 +36,7 @@ print(list(queue)) # queue의 list 형태
 def factorial_iterative(n):
     result = 1
     # 1부터 n까지의 수를 차례대로 곱하기
-    for i in range(1, n+1):
+    for i in range(1, n + 1):
         result *= i
     return result
 
@@ -99,6 +99,26 @@ visited = [False] * 9
 dfs(graph, 1, visited)
 
 
+# try)
+
+# In[1]:
+
+
+def dfs(graph, v, visited):
+    visited[v] = True
+    print(v, end=' ')
+    for i in graph[v]:
+        if not visited[i]:
+            dfs(graph, i, visited)
+    
+graph = [[], [2,3,8], [1,7], [1,4,5], [3,5],
+        [3,4], [7], [2,6,8], [1,7]]
+
+visited = [False] * 9
+
+dfs(graph, 1, visited)
+
+
 # <b>BFS 예제
 
 # In[6]:
@@ -131,5 +151,31 @@ graph = [[], [2,3,8], [1,7], [1,4,5], [3,5],
 visited = [False] * 9
 
 # 정의된 DFS 함수 호출
+bfs(graph, 1, visited)
+
+
+# try)
+
+# In[3]:
+
+
+from collections import deque
+
+def bfs(graph, start, visited):
+    queue = deque([start])
+    visited[start] = True
+    while queue:
+        v = queue.popleft()
+        print(v, end=' ')
+        for i in graph[v]:
+            if not visited[i]:
+                queue.append(i)
+                visited[i] = True
+
+graph = [[], [2,3,8], [1,7], [1,4,5], [3,5],
+        [3,4], [7], [2,6,8], [1,7]]
+
+visited = [False] * 9
+
 bfs(graph, 1, visited)
 
