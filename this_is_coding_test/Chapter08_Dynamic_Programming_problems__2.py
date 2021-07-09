@@ -5,7 +5,7 @@
 
 # ans) a_i = min(a_i - 1, a_i / 2, a_i / 3, a_i / 5) + 1
 
-# In[3]:
+# In[2]:
 
 
 # 정수 X를 입력받기
@@ -14,7 +14,7 @@ x = int(input())
 # 앞서 계산된 결과를 저장하기 위한 DP 테이블 초기화
 d = [0] * 30001
 
-# 다이나믹 프로그래밍(Dynamic Programming) 진행(Bottom Up)
+# 다이나믹 프로그래밍(Dynamic Programming) 진행(보텀업)
 for i in range(2, x + 1):
     # 현재의 수에서 1을 빼는 경우
     d[i] = d[i - 1] + 1
@@ -29,6 +29,9 @@ for i in range(2, x + 1):
         d[i] = min(d[i], d[i // 5] + 1)
         
 print(d[x])
+
+for i in range(2, x + 1):
+    print(d[i], end=' ')
 
 
 # <b> 2. 개미 전사
@@ -46,7 +49,7 @@ array = list(map(int, input().split()))
 # 앞서 계산된 결과를 저장하기 위한 DP 테이블 초기화
 d = [0] * 100
 
-# 다이나믹 프로그래밍(Dynamic Programming) 진행(Bottom Up)
+# 다이나믹 프로그래밍(Dynamic Programming) 진행(보텀업)
 d[0] = array[0]
 d[1] = max(array[0], array[1])
 for i in range(2, n):
@@ -69,7 +72,7 @@ n = int(input())
 # 앞서 계산된 결과를 저장하기 위한 DP 테이블 초기화
 d[0] * 1001
 
-# 다이나믹 프로그래밍(Dynamic Programming) 진행(Bottom Up)
+# 다이나믹 프로그래밍(Dynamic Programming) 진행(보텀업)
 d[1] = 1
 d[2] = 3
 for i in range(3, n+1):
@@ -99,7 +102,7 @@ for i in range(n):
 # 한 번 계산된 결과를 저장하기 위한 DP 테이블 초기화
 d = [10001] * (m + 1)
 
-# 다이나믹 프로그래밍(Dynamic Programming) 진행(Bottom Up)
+# 다이나믹 프로그래밍(Dynamic Programming) 진행(보텀업)
 d[0] = 0
 for i in range(n):
     for j in range(array[i], m + 1):
