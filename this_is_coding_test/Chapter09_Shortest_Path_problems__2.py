@@ -31,7 +31,7 @@ for _ in range(m):
     graph[a][b] = 1
     graph[b][a] = 1
     
-# 거쳐 갈 노드의 X와 최종 목적지 노드 K를 입력받기
+# 거쳐 갈 노드의 K와 최종 목적지 노드 X를 입력받기
 x, k = map(int, input().split())
 
 # 점화식에 따라 플로이드 워셜 알고리즘을 수행
@@ -57,7 +57,7 @@ else:
 #      N과 M의 범위가 충분히 크기 때문에(시간복잡도 고려),
 #      우선순위 큐를 이용하여 다익스트라 알고리즘을 작성
 
-# In[ ]:
+# In[6]:
 
 
 import heapq
@@ -74,12 +74,12 @@ distance = [INF] * (n + 1)
 for _ in range(m):
     x, y, z = map(int, input().split())
     # a번 노드에서 b번 노드로 가는 비용이 c라는 의미
-    graph[x].append(y, z)
+    graph[x].append((y, z))
     
 def dijkstra(start):
     q = []
     # 시작 노드로 가기 위한 최단 경로는 0으로 설정하여, 큐에 삽입
-    heapq.heapqpush(q, (0, start))
+    heapq.heappush(q, (0, start))
     distance[start] = 0
     while q:# 큐가 비어있지 않다면
         # 가장 최단 거리가 짧은 노드에 대한 정보 꺼내기
